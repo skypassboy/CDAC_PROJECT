@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CDAC_FINAL_PROJECT_.NET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b73f213eb456c5ed4a33ac22fa180267d3b5146")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CDAC_FINAL_PROJECT_.NET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CDAC_FINAL_PROJECT_.NET")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

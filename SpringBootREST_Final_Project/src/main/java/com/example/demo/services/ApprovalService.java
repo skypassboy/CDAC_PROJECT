@@ -11,12 +11,16 @@ import com.example.demo.entities.ApprovalStatus;
 import com.example.demo.entities.Property;
 import com.example.demo.entities.RentRequest;
 import com.example.demo.repositories.ApprovalRepository;
+import com.example.demo.repositories.PropertyRepository;
 
 @Service
 public class ApprovalService {
 	@Autowired
 	private ApprovalRepository Apprepo;
-
+	
+	@Autowired
+	private PropertyRepository prepo;
+	
 	public ApprovalStatus addRequest(ApprovalStatus approve) {
 		return Apprepo.save(approve);
 	}
@@ -30,6 +34,7 @@ public class ApprovalService {
 	
 	public  List<ApprovalStatus> getAllRecord(long pid) {
 		System.out.println("pid wali");
+		
 		return Apprepo.findByPropertyId(pid); 
 	}
 
@@ -45,6 +50,12 @@ public class ApprovalService {
 		ApprovalStatus asts = Apprepo.findById(approvalId).get();
 		asts.setStatus(status);
 		asts.setResponsedate(cdate);
+		if(status==1) {
+			Property p = asts.getProperty();
+			p.setStatus(1);
+			prepo.save(p);
+		}
+		
 		return Apprepo.save(asts) == null?0:1;
 		
 	}

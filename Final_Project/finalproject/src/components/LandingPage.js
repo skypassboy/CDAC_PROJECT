@@ -90,6 +90,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown } from 'react-bootstrap';
 import SearchProperty from './SearchProperty';
+import ImageCarousel from './ImageCarousel';
 
 localStorage.setItem("page", "/login_page");
 
@@ -97,7 +98,7 @@ const LandingPage = () => {
     const navigate = useNavigate();
     const [isLoggedIn, setLoggedIn] = useState(false);
     const [name, setName] = useState("");
-
+    const [showCarousel, setShowCarousel] = useState(true);
     useEffect(() => {
         const isUserLoggedIn = localStorage.getItem('rlogin') === 'true';
         setLoggedIn(isUserLoggedIn);
@@ -120,7 +121,10 @@ const LandingPage = () => {
         setName("");
         navigate('/LandingPage');
     };
-
+    const handleSearch = () => {
+        // Set showCarousel to false when search is initiated
+        setShowCarousel(false);
+    };
 
     return (
         <div>
@@ -173,7 +177,8 @@ const LandingPage = () => {
 
                 </div>
             </nav>
-            {<SearchProperty />}
+            {<SearchProperty onSearch={handleSearch} />}
+            {showCarousel && <ImageCarousel />}
         </div>
     );
 };

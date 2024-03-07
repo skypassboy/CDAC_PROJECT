@@ -46,7 +46,7 @@ public class UserController {
         User authenticatedUser = uservice.authenticateUser(loginUser.getEmailid(), loginUser.getPassword());
         
         // Return a response, such as the authenticated user and HTTP status
-        if (authenticatedUser != null) {
+        if (authenticatedUser != null && authenticatedUser.getActive()!=false ) {
             return ResponseEntity.ok(authenticatedUser);
         } else {
             // You may want to return a different status code for unsuccessful login
@@ -71,6 +71,13 @@ public class UserController {
 		System.out.println("in update");
 		System.out.println(userId);
         return uservice.updateUser(userId, updatedUser);
+    }
+	
+	@PutMapping("/ustatus/{uid}/{status}")
+    public ResponseEntity<User> Activity(@PathVariable int uid, @PathVariable boolean status) {
+		//System.out.println(userId);
+        User u=uservice.Active(uid,status);
+        return ResponseEntity.ok(u);
     }
 	
 }

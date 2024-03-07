@@ -26,15 +26,16 @@ const AddPropertyForm = () => {
         tenanttype: '',
         pincode: '',
         areaname: '',
-        cityid: ''
+        cityid: '',
+        status:0
     };
-    
+
     const [citiesData, setCitiesData] = useState([]);
     const [areasData, setAreasData] = useState([]);
     const [pincodeData, setPincodeData] = useState('');
     const [propertyDetails, setPropertyDetails] = useState(initialState);
     const navigate = useNavigate();
-   
+
     const fetchData = () => {
         fetch('http://localhost:8080/getallcities')
             .then(response => {
@@ -150,7 +151,8 @@ const AddPropertyForm = () => {
                 "city1": {
                     "cityid": propertyDetails.cityid
                 }
-            }
+            },
+            "status":0
         }
         console.log(obj)
         // Send the property details to the API
@@ -182,7 +184,7 @@ const AddPropertyForm = () => {
             <div className="container">
             <h2>Add Property</h2>
             <form onSubmit={handleSubmit}>
-               
+
                 <div className="mb-3">
                     <label htmlFor="address" className="form-label">
                         Address
@@ -452,3 +454,10 @@ const AddPropertyForm = () => {
 };
 
 export default AddPropertyForm;
+
+
+
+
+
+
+

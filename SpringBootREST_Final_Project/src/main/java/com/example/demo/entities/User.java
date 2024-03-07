@@ -54,6 +54,9 @@ public class User {
 	@Column
 	int pincode;
 	
+	@Column
+	Boolean active;
+	
 	public User(int userid) {
         this.userid = userid;
     }

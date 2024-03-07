@@ -624,6 +624,7 @@ const Registration = () => {
         Role_ID: '',
         Address: '',
         Pincode: '',
+        active:true,
     });
 
     const [errors, setErrors] = useState({
@@ -635,6 +636,7 @@ const Registration = () => {
         Role_ID: '',
         Address: '',
         Pincode: '',
+        active:true,
     });
 
 
@@ -648,6 +650,7 @@ const Registration = () => {
             Role_ID: '',
             Address: '',
             Pincode: '',
+            active:true,
         })
     }
 
@@ -723,6 +726,7 @@ const Registration = () => {
                 roleid: formData.Role_ID,
                 address: formData.Address,
                 pincode: formData.Pincode,
+                active:true,
             }),
         };
 
@@ -749,171 +753,171 @@ const Registration = () => {
     };
 
     return (
-      <div>
-        <LoginNavbar/>
-          <div className='container my-5'>
-            <div className='row justify-content-center'>
-                <div className='col-md-6 col-lg-5'>
-                    <div className='card shadow-lg p-4'>
-                        <h2 className='text-center mb-4' style={{ color: '#808080', fontFamily: 'cursive' }}>Register</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div className='mb-3'>
-                                <input
-                                    type='text'
-                                    id='Username'
-                                    name='Username'
-                                    value={formData.Username}
-                                    onChange={handleChange}
-                                    placeholder='Username'
-                                    className={`form-control ${errors.Username && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('Username')}
-                                    onMouseLeave={handleMouseLeave}
-                                />
-                                {hoveredField === 'Username' && errors.Username && (
-                                    <div className='invalid-feedback'>{errors.Username}</div>
-                                )}
-                            </div>
+        <div>
+            <LoginNavbar />
+            <div className='container my-5'>
+                <div className='row justify-content-center'>
+                    <div className='col-md-6 col-lg-5'>
+                        <div className='card shadow-lg p-4'>
+                            <h2 className='text-center mb-4' style={{ color: '#808080', fontFamily: 'cursive' }}>Register</h2>
+                            <form onSubmit={handleSubmit}>
+                                <div className='mb-3'>
+                                    <input
+                                        type='text'
+                                        id='Username'
+                                        name='Username'
+                                        value={formData.Username}
+                                        onChange={handleChange}
+                                        placeholder='Username'
+                                        className={`form-control ${errors.Username && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('Username')}
+                                        onMouseLeave={handleMouseLeave}
+                                    />
+                                    {hoveredField === 'Username' && errors.Username && (
+                                        <div className='invalid-feedback'>{errors.Username}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <input
-                                    type='password'
-                                    id='Password'
-                                    name='Password'
-                                    value={formData.Password}
-                                    onChange={handleChange}
-                                    placeholder='Password'
-                                    className={`form-control ${errors.Password && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('Password')}
-                                    onMouseLeave={handleMouseLeave}
-                                />
-                                {hoveredField === 'Password' && errors.Password && (
-                                    <div className='invalid-feedback'>{errors.Password}</div>
-                                )}
-                            </div>
+                                <div className='mb-3'>
+                                    <input
+                                        type='password'
+                                        id='Password'
+                                        name='Password'
+                                        value={formData.Password}
+                                        onChange={handleChange}
+                                        placeholder='Password'
+                                        className={`form-control ${errors.Password && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('Password')}
+                                        onMouseLeave={handleMouseLeave}
+                                    />
+                                    {hoveredField === 'Password' && errors.Password && (
+                                        <div className='invalid-feedback'>{errors.Password}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <input
-                                    type='number'
-                                    id='AadharCard_No'
-                                    name='AadharCard_No'
-                                    value={formData.AadharCard_No}
-                                    onChange={handleChange}
-                                    placeholder='AadharCard_No'
-                                    className={`form-control ${errors.AadharCard_No && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('AadharCard_No')}
-                                    onMouseLeave={handleMouseLeave}
-                                />
-                                {hoveredField === 'AadharCard_No' && errors.AadharCard_No && (
-                                    <div className='invalid-feedback'>{errors.AadharCard_No}</div>
-                                )}
-                            </div>
+                                <div className='mb-3'>
+                                    <input
+                                        type='number'
+                                        id='AadharCard_No'
+                                        name='AadharCard_No'
+                                        value={formData.AadharCard_No}
+                                        onChange={handleChange}
+                                        placeholder='AadharCard_No'
+                                        className={`form-control ${errors.AadharCard_No && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('AadharCard_No')}
+                                        onMouseLeave={handleMouseLeave}
+                                    />
+                                    {hoveredField === 'AadharCard_No' && errors.AadharCard_No && (
+                                        <div className='invalid-feedback'>{errors.AadharCard_No}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <input
-                                    type='email'
-                                    id='Email_ID'
-                                    name='Email_ID'
-                                    value={formData.Email_ID}
-                                    onChange={handleChange}
-                                    placeholder='Email_ID'
-                                    className={`form-control ${errors.Email_ID && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('Email_ID')}
-                                    onMouseLeave={handleMouseLeave}
-                                />
-                                {hoveredField === 'Email_ID' && errors.Email_ID && (
-                                    <div className='invalid-feedback'>{errors.Email_ID}</div>
-                                )}
-                            </div>
+                                <div className='mb-3'>
+                                    <input
+                                        type='email'
+                                        id='Email_ID'
+                                        name='Email_ID'
+                                        value={formData.Email_ID}
+                                        onChange={handleChange}
+                                        placeholder='Email_ID'
+                                        className={`form-control ${errors.Email_ID && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('Email_ID')}
+                                        onMouseLeave={handleMouseLeave}
+                                    />
+                                    {hoveredField === 'Email_ID' && errors.Email_ID && (
+                                        <div className='invalid-feedback'>{errors.Email_ID}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <input
-                                    type='number'
-                                    id='Phone_Number'
-                                    name='Phone_Number'
-                                    value={formData.Phone_Number}
-                                    onChange={handleChange}
-                                    placeholder='Phone_Number'
-                                    className={`form-control ${errors.Phone_Number && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('Phone_Number')}
-                                    onMouseLeave={handleMouseLeave}
-                                />
-                                {hoveredField === 'Phone_Number' && errors.Phone_Number && (
-                                    <div className='invalid-feedback'>{errors.Phone_Number}</div>
-                                )}
-                            </div>
+                                <div className='mb-3'>
+                                    <input
+                                        type='number'
+                                        id='Phone_Number'
+                                        name='Phone_Number'
+                                        value={formData.Phone_Number}
+                                        onChange={handleChange}
+                                        placeholder='Phone_Number'
+                                        className={`form-control ${errors.Phone_Number && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('Phone_Number')}
+                                        onMouseLeave={handleMouseLeave}
+                                    />
+                                    {hoveredField === 'Phone_Number' && errors.Phone_Number && (
+                                        <div className='invalid-feedback'>{errors.Phone_Number}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <select
-                                    id='Role_ID'
-                                    name='Role_ID'
-                                    onChange={handleChange}
-                                    value={formData.Role_ID}
-                                    className={`form-control ${errors.Role_ID && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('Role_ID')}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <option>Select Role</option>
-                                    <option value='2'>Owner</option>
-                                    <option value='3'>Tenant</option>
-                                </select>
-                                {hoveredField === 'Role_ID' && errors.Role_ID && (
-                                    <div className='invalid-feedback'>{errors.Role_ID}</div>
-                                )}
-                            </div>
+                                <div className='mb-3'>
+                                    <select
+                                        id='Role_ID'
+                                        name='Role_ID'
+                                        onChange={handleChange}
+                                        value={formData.Role_ID}
+                                        className={`form-control ${errors.Role_ID && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('Role_ID')}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        <option>Select Role</option>
+                                        <option value='2'>Owner</option>
+                                        <option value='3'>Tenant</option>
+                                    </select>
+                                    {hoveredField === 'Role_ID' && errors.Role_ID && (
+                                        <div className='invalid-feedback'>{errors.Role_ID}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <input
-                                    type='text'
-                                    id='Address'
-                                    name='Address'
-                                    value={formData.Address}
-                                    onChange={handleChange}
-                                    placeholder='Address'
-                                    className={`form-control ${errors.Address && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('Address')}
-                                    onMouseLeave={handleMouseLeave}
-                                />
-                                {hoveredField === 'Address' && errors.Address && (
-                                    <div className='invalid-feedback'>{errors.Address}</div>
-                                )}
-                            </div>
+                                <div className='mb-3'>
+                                    <input
+                                        type='text'
+                                        id='Address'
+                                        name='Address'
+                                        value={formData.Address}
+                                        onChange={handleChange}
+                                        placeholder='Address'
+                                        className={`form-control ${errors.Address && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('Address')}
+                                        onMouseLeave={handleMouseLeave}
+                                    />
+                                    {hoveredField === 'Address' && errors.Address && (
+                                        <div className='invalid-feedback'>{errors.Address}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <input
-                                    type='number'
-                                    id='Pincode'
-                                    name='Pincode'
-                                    value={formData.Pincode}
-                                    onChange={handleChange}
-                                    placeholder='Pincode'
-                                    className={`form-control ${errors.Pincode && 'is-invalid'}`}
-                                    onMouseEnter={() => handleMouseEnter('Pincode')}
-                                    onMouseLeave={handleMouseLeave}
-                                />
-                                {hoveredField === 'Pincode' && errors.Pincode && (
-                                    <div className='invalid-feedback'>{errors.Pincode}</div>
-                                )}
-                            </div>
+                                <div className='mb-3'>
+                                    <input
+                                        type='number'
+                                        id='Pincode'
+                                        name='Pincode'
+                                        value={formData.Pincode}
+                                        onChange={handleChange}
+                                        placeholder='Pincode'
+                                        className={`form-control ${errors.Pincode && 'is-invalid'}`}
+                                        onMouseEnter={() => handleMouseEnter('Pincode')}
+                                        onMouseLeave={handleMouseLeave}
+                                    />
+                                    {hoveredField === 'Pincode' && errors.Pincode && (
+                                        <div className='invalid-feedback'>{errors.Pincode}</div>
+                                    )}
+                                </div>
 
-                            <div className='mb-3'>
-                                <button type='submit' className='btn btn-primary w-100'>
-                                    Register
-                                </button>
-                                {msg && <div className='alert alert-info mt-3'>{msg}</div>}
-                                <button
-                                    id='btn'
-                                    className='btn btn-secondary w-100 mt-2'
-                                    onClick={handleReset}
-                                >
-                                    Reset
-                                </button>
-                            </div>
-                        </form>
+                                <div className='mb-3'>
+                                    <button type='submit' className='btn btn-primary w-100'>
+                                        Register
+                                    </button>
+                                    {msg && <div className='alert alert-info mt-3'>{msg}</div>}
+                                    <button
+                                        id='btn'
+                                        className='btn btn-secondary w-100 mt-2'
+                                        onClick={handleReset}
+                                    >
+                                        Reset
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
     );
 };
 

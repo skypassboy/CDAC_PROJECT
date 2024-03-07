@@ -83,5 +83,5 @@ public class PropertyController {
         return propertyService.getPropertiesByUser(user);
     }
     
-
+    
 }

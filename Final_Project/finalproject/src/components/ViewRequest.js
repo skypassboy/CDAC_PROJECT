@@ -31,6 +31,7 @@ const ViewRequest = () => {
 
 
     const handleConfirmRequest = async (aid, status) => {
+        alert(aid);
         try {
             const response = await fetch(`http://localhost:8080/confirm/${aid}/${status}`, {
                 method: 'PUT',
@@ -76,7 +77,7 @@ const ViewRequest = () => {
     };
 
     return (
-        
+
         <div>
             <h1>List of Requests</h1>
             <button
@@ -118,6 +119,7 @@ const ViewRequest = () => {
                                         Reject
                                     </button>
                                 </td>
+                                {console.log(request.aid)}
                             </tr>
                         )
                     ))}

@@ -1,0 +1,28 @@
+/* ImageCarousel.css */
+
+/* Container that occupies full width */
+.full-width-container {
+    width: 100%; /* Use 100% width for responsiveness */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+/* Additional styling for the slider */
+.custom-slider {
+    border: none; /* Remove any border */
+    margin-top: 40px; /* Add some top margin */
+    border: 1px solid #ddd; /* Add a border for visual separation */
+    border-radius: 5px; /* Add border-radius for a rounded appearance */
+    overflow: hidden; /* Ensure images don't overflow */
+    position: relative; /* Set position to relative for absolute positioning of images */
+    height: 100vh; /* Set the height of the slider to fill the viewport height */
+}
+
+/* Custom styling for images */
+.custom-image {
+    width: 100%; /* Ensure all images fill the container width */
+    height: 100%; /* Set the height to 100% to fill the entire carousel slide */
+    object-fit: cover; /* Ensure images cover the entire slide */
+    display: block; /* Ensure images are treated as block elements */
+}

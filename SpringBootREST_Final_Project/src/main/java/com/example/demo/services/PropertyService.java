@@ -3,9 +3,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entities.ApprovalStatus;
 import com.example.demo.entities.Area;
 import com.example.demo.entities.Property;
 import com.example.demo.entities.User;
+import com.example.demo.repositories.ApprovalRepository;
 import com.example.demo.repositories.AreaRepository;
 import com.example.demo.repositories.PropertyRepository;
 
@@ -25,7 +27,7 @@ public class PropertyService {
     
     
     public List<Property> getAllProperties() {
-        return propertyRepository.findAll();
+        return propertyRepository.findAllProperties();
     }
 
     public Property getPropertyById(Long propertyId) {
@@ -111,8 +113,17 @@ public class PropertyService {
 		}
         
     }
-
+    @Autowired
+    private ApprovalService aser;
+    @Autowired
+    private ApprovalRepository ar;
+    @Autowired
+    private ImageService is;
     public void deleteProperty(Long propertyId) {
+//    	List<ApprovalStatus> as=aser.getAllRecord(propertyId);
+//    	for(ApprovalStatus p:as)
+//    		ar.delete(p);
+    	
         Property existingProperty = getPropertyById(propertyId);
         propertyRepository.delete(existingProperty);
     }

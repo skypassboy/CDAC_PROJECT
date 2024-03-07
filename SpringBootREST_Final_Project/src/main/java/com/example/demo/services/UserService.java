@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entities.Property;
 import com.example.demo.entities.User;
+import com.example.demo.repositories.PropertyRepository;
 import com.example.demo.repositories.UserRepository;
 
 
@@ -18,6 +20,13 @@ public class UserService {
 	
 	@Autowired
 	UserRepository urepo;
+	
+	
+	@Autowired
+	PropertyService pservice;
+	
+	@Autowired
+	PropertyRepository prepo;
 	
 	public User getOne(int uid) {
 	    Optional<User> userOptional = urepo.findById(uid);
@@ -60,7 +69,22 @@ public class UserService {
     }
 
    
+	public User Active(int uid,boolean status) {
+		User u=urepo.findById(uid).get();
+		u.setActive(status);
+		if(status==false) {
 	
+			List<Property> list=pservice.getPropertiesByUserId(u);
+			for(Property p:list) 
+				p.setStatus(2);	
+		}else {
+			List<Property> list=pservice.getPropertiesByUserId(u);
+			for(Property p:list) 
+				p.setStatus(0);
+		}
+		return urepo.save(u);
+		
+	}
 	
 	
 	@Transactional

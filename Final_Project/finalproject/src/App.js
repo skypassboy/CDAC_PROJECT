@@ -38,6 +38,8 @@ import UpdateProperty from './components/UpdateProperty';
 import ViewRequest from './components/ViewRequest';
 import UserTable from './components/UserTable';
 import LoginNavbar from './components/LoginNavbar';
+import Imgup from './components/imageup';
+import ImageCarousel from './components/ImageCarousel';
 
 
 
@@ -86,6 +88,8 @@ function App() {
         <Route path="/viewrequests/:propertyId" element={<ViewRequest />} />
         <Route path="/usertable" element={<UserTable />} />
         <Route path="/loginNavbar" element={<LoginNavbar />} />
+        <Route path="/imgup" element={<Imgup />} />
+        <Route path='/ImageCarousel' element={<ImageCarousel />} />
       </Routes>
 
 

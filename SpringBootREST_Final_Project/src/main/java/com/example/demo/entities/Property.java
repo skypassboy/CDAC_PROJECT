@@ -61,6 +61,9 @@ public class Property {
     @Column(name = "tenanttype")
     private String tenanttype;
     
+    @Column(name = "status")
+    private Integer status;
+    
 //    change 22/02/24
 //    @Column(name = "image")
 //    private String image;
@@ -267,6 +270,43 @@ public class Property {
 				+ wifi + ", gasconnection=" + gasconnection + ", lift=" + lift + ", floorno=" + floorno
 				+ ", watergeyser=" + watergeyser + ", tenanttype=" + tenanttype + ", pincode="
 				+ pincode +"]";
+	}
+
+
+
+	public Property(User userid, String address, Integer propertyareasqft, Integer bhk, Integer rent, Integer deposit,
+			String furnished, Boolean parking, Integer nooftoilets, Boolean wifi, Boolean gasconnection, Boolean lift,
+			Integer floorno, Boolean watergeyser, String tenanttype, Integer status, Area pincode) {
+		super();
+		this.userid = userid;
+		this.address = address;
+		this.propertyareasqft = propertyareasqft;
+		this.bhk = bhk;
+		this.rent = rent;
+		this.deposit = deposit;
+		this.furnished = furnished;
+		this.parking = parking;
+		this.nooftoilets = nooftoilets;
+		this.wifi = wifi;
+		this.gasconnection = gasconnection;
+		this.lift = lift;
+		this.floorno = floorno;
+		this.watergeyser = watergeyser;
+		this.tenanttype = tenanttype;
+		this.status = status;
+		this.pincode = pincode;
+	}
+
+
+
+	public Integer getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 
